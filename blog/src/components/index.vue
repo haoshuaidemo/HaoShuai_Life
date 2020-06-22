@@ -36,7 +36,7 @@
                                 <a class="article-header-type-a">{{item.type}}</a>
                             </div>
                             <div class="article-header-title">
-                                <a>{{item.title}}</a>
+                                <a style="color: black">{{item.title}}</a>
                             </div>
                         </div>
                     </div>
@@ -49,22 +49,22 @@
                         <div class="article-footer-guodu">
                             <div class="article-footer-date">
                                 <i class="el-icon-date"></i>
-                                <a>{{item.date}}</a>
+                                <a style="color: black">{{item.date}}</a>
                             </div>
                             <div class="article-footer-comment">
                                 <i class="el-icon-chat-dot-round"></i>
-                                <a>{{item.comment}}</a>
+                                <a style="color: black">{{item.comment}}</a>
                             </div>
                             <div class="article-footer-view">
                                 <i class="el-icon-view"></i>
-                                <a>{{item.view}}</a>
+                                <a style="color: black">{{item.view}}</a>
                             </div>
                             <div class="article-footer-star">
                                 <i class="el-icon-star-off"></i>
-                                <a>{{item.star}}</a>
+                                <a style="color: black">{{item.star}}</a>
                             </div>
                             <div class="article-footer-read">
-                                <a>阅读全文</a>
+                                <a style="color: black">阅读全文</a>
                                 <i class="el-icon-caret-right"></i>
                             </div>
                         </div>
@@ -74,7 +74,9 @@
             <div class="body-right">
                 <div class="body-right-guodu">
                     <div class="body-right-personal">
-
+                        <el-image class="personal-image" :src="require('../assets/images/'+personalInfo.image+'.jpg')"></el-image>
+                        <a class="personal-motto">{{personalInfo.metto}}</a>
+                        <el-divider></el-divider>
                     </div>
                 </div>
             </div>
@@ -106,7 +108,11 @@
                 bodyContextList:[
                     {star:'423',view:'19',comment:'19',date:'2020年06月04日',articlePhotoPath:'10',title:'中国的崛起',type:'日记本',articleContext:'我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见'},
                     {articlePhotoPath:'10',title:'大国崛起',type:'日记本'},
-                ]
+                ],
+                personalInfo:{
+                    image:'11',
+                    metto:'博士，非博学之士；讲师，讲所学所知。糊涂一生，平凡半世，惟愿淡泊，以度此生。'
+                }
             }
         },
         created(){},
@@ -122,7 +128,6 @@
     }
     .body{
         width: 90%;
-        color: yellow;
         min-height: 900px;
         position: relative;
         left:5%;
@@ -173,7 +178,6 @@
     }
     .body-navbar{
         height: 60px;
-        color: yellow;
     }
     .body-left{
         width:60%;
@@ -184,7 +188,6 @@
     /*文章块*/
     .body-left-context{
         background-color: white;
-        color: green;
         width: 100%;
         min-height: 200px;
         margin: 10px;
@@ -201,7 +204,6 @@
         height: 145px;
     }
     .article-header{
-        background-color: white;
         width: 70%;
         height: 25%;
         position: absolute;
@@ -232,7 +234,6 @@
         text-align: center;
         white-space: nowrap;
         font-size: 15px;
-        font-family: "Microsoft YaHei";
         color: white;
         line-height: 18px;
         width: 100%;
@@ -248,7 +249,6 @@
         font-family: "Microsoft YaHei";
     }
     .article-body{
-        background-color: green;
         width: 70%;
         height: 50%;
         position: absolute;
@@ -306,14 +306,23 @@
         position: relative;
         width: 100%;
         min-height: 500px;
-        background-color: pink;
+        background-color: whitesmoke;
     }
     .body-right-personal{
         position: absolute;
         width: 90%;
         height: 200px;
-        background-color: #00a2ff;
+        background-color: white;
         margin: 10px 5% 10px 5%;
+    }
+    .personal-image{
+        height: 100px;
+    }
+    .personal-motto{
+        font-size: 15px;
+        position: relative;
+        top:20px;
+        color: black;
     }
 
     /*尾部*/
