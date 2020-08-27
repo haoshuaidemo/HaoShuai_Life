@@ -93,30 +93,49 @@
 <script>
     export default {
         name: "index",
-        data(){
-            return{
-                title:'郝帅的个人博客',
-                motto:'一个在互联网浪潮中苟且偷生的人',
+        data() {
+            return {
+                title: '郝帅的个人博客',
+                motto: '一个在互联网浪潮中苟且偷生的人',
                 //轮播图
                 images: [
-                    {id:1,imagePath:require("../assets/images/1.jpg")},
-                    {id:2,imagePath:require("../assets/images/3.jpg")},
-                    {id:3,imagePath:require('../assets/images/4.jpg')},
+                    {id: 1, imagePath: require("../assets/images/1.jpg")},
+                    {id: 2, imagePath: require("../assets/images/3.jpg")},
+                    {id: 3, imagePath: require('../assets/images/4.jpg')},
                 ],
-                portraitImage:'10',
-                articleImage:'10',
-                bodyContextList:[
-                    {star:'423',view:'19',comment:'19',date:'2020年06月04日',articlePhotoPath:'10',title:'中国的崛起',type:'日记本',articleContext:'我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见'},
-                    {articlePhotoPath:'10',title:'大国崛起',type:'日记本'},
+                portraitImage: '10',
+                articleImage: '10',
+                bodyContextList: [
+                    {
+                        star: '423',
+                        view: '19',
+                        comment: '19',
+                        date: '2020年06月04日',
+                        articlePhotoPath: '10',
+                        title: '中国的崛起',
+                        type: '日记本',
+                        articleContext: '我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见我们技术的房价二建法规IE违法及违法加我IE飞机为二级分为接机服务if将诶分解房间诶房间诶房间诶见'
+                    },
+                    {articlePhotoPath: '10', title: '大国崛起', type: '日记本'},
                 ],
-                personalInfo:{
-                    image:'11',
-                    metto:'博士，非博学之士；讲师，讲所学所知。糊涂一生，平凡半世，惟愿淡泊，以度此生。'
+                personalInfo: {
+                    image: '11',
+                    metto: '博士，非博学之士；讲师，讲所学所知。糊涂一生，平凡半世，惟愿淡泊，以度此生。'
+                },
+                pojo:{
+                    id:'111',
+                    username:'2324',
+                    password:'234'
                 }
             }
+
         },
-        created(){},
-        method:{}
+        created() {
+            //post
+            this.$post('/postParams',this.pojo)
+            //get
+            this.$get('/getParam?param=123')
+        }
     }
 </script>
 
@@ -179,8 +198,8 @@
     .body-navbar{
         height: 60px;
     }
-    .body-left{
-        width:60%;
+    .body-left {
+        width: 60%;
         min-height: 700px;
         margin: 2%;
         position: absolute;

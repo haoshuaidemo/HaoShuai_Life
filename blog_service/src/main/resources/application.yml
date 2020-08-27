@@ -7,3 +7,13 @@ spring:
 mybatis:
   type-aliases-package: com.blog.pojo
   mapper-locations: classpath:com/blog/mapper/impl/*Mapper.xml
+server:
+  port: 8081
+management:
+  security:
+  enabled: false
+#prometheus配置
+info: alen
+alenmanagement: endpoints
+web: base-path:/actuatoreposure
+include: "*"
